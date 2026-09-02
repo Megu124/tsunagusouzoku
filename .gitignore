@@ -1,0 +1,6 @@
+# Obsidian（端末固有・キャッシュ系ファイルは同期対象から除外）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+.trash/
