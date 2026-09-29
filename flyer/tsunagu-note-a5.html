@@ -23,11 +23,27 @@
     background:
       radial-gradient(ellipse 90mm 70mm at 0 100%, #dcebf8 0%, transparent 70%),
       linear-gradient(180deg, #ffffff 0%, #f0f6fc 100%);
-    display: grid; grid-template-columns: 122mm 1fr; grid-template-rows: minmax(0, 1fr) 13mm;
-    column-gap: 6mm; row-gap: 3mm;
-    padding: 6mm 8mm 5mm 8mm;
+    display: grid; grid-template-columns: 122mm 1fr; grid-template-rows: 21mm minmax(0, 1fr) 11mm;
+    column-gap: 6mm; row-gap: 2.5mm;
+    padding: 0 8mm 4mm 8mm;
   }
-  .leaves { position: absolute; left: 0; top: 0; width: 34mm; mix-blend-mode: multiply; opacity: .9; pointer-events: none;
+  /* ---------- イベント見出し ---------- */
+  .event {
+    grid-column: 1 / 3; margin: 0 -8mm; padding: 2.2mm 8mm 2.4mm; position: relative;
+    background: linear-gradient(100deg, #15356a 0%, #1f4c8f 60%, #2a62ad 100%);
+    color: #fff; text-align: center; font-family: "Shippori Mincho", serif;
+    display: flex; flex-direction: column; justify-content: center; gap: .8mm;
+  }
+  .event::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: .6mm;
+                  background: linear-gradient(90deg, transparent, #d9b25f 20%, #f3dca0 50%, #d9b25f 80%, transparent); }
+  .event .tag { align-self: center; font-family: "Noto Sans JP", sans-serif; font-weight: 700; font-size: 7pt; letter-spacing: .12em;
+                padding: .4mm 3.5mm; border: .3mm solid #e6c77e; color: #f3dca0; border-radius: 3mm; }
+  .event h2 { font-size: 16pt; font-weight: 800; letter-spacing: .08em; line-height: 1.2; }
+  .event h2 em { font-style: normal; color: #f3dca0; }
+  .event p { font-size: 9pt; font-weight: 700; letter-spacing: .06em; }
+  .event p b { color: #f3dca0; font-size: 10.5pt; }
+
+  .leaves { position: absolute; left: 0; top: 21mm; width: 26mm; mix-blend-mode: multiply; opacity: .9; pointer-events: none;
             -webkit-mask-image: radial-gradient(ellipse 100% 100% at 0 0, #000 45%, transparent 100%);
                     mask-image: radial-gradient(ellipse 100% 100% at 0 0, #000 45%, transparent 100%); }
 
@@ -35,25 +51,25 @@
   .left { display: flex; flex-direction: column; min-height: 0; position: relative; }
   .title { display: flex; align-items: center; justify-content: center; gap: 3mm;
            font-family: "Shippori Mincho", serif; color: var(--navy); }
-  .title .logo { width: 17mm; mix-blend-mode: multiply; filter: brightness(1.12) contrast(1.25); }
-  .title .pre { font-size: 12pt; font-weight: 700; letter-spacing: .14em; }
-  .title h1 { font-size: 26pt; font-weight: 800; line-height: 1.2; letter-spacing: .04em; }
+  .title .logo { width: 14mm; mix-blend-mode: multiply; filter: brightness(1.12) contrast(1.25); }
+  .title .pre { font-size: 10.5pt; font-weight: 700; letter-spacing: .14em; }
+  .title h1 { font-size: 23pt; font-weight: 800; line-height: 1.2; letter-spacing: .04em; }
   .title rt { font-size: 6pt; font-weight: 500; letter-spacing: .3em; }
 
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 2mm; }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 1.2mm; }
   .pillar { text-align: center; --line: var(--red); }
   .pillar:nth-child(2) { --line: var(--green); }
   .pillar:nth-child(3) { --line: var(--blue); }
-  .pillar h2 { font-family: "Shippori Mincho", serif; font-size: 13pt; font-weight: 700; color: var(--navy); }
-  .pillar h2 b { font-size: 18pt; font-weight: 800; }
-  .pillar h2::after { content: ""; display: block; height: .6mm; margin: .8mm auto 0; width: 85%; border-radius: 1mm;
+  .pillar h3 { font-family: "Shippori Mincho", serif; font-size: 13pt; font-weight: 700; color: var(--navy); }
+  .pillar h3 b { font-size: 18pt; font-weight: 800; }
+  .pillar h3::after { content: ""; display: block; height: .6mm; margin: .8mm auto 0; width: 85%; border-radius: 1mm;
                       background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent); }
-  .pillar p { font-family: "Shippori Mincho", serif; font-weight: 700; font-size: 7.5pt; line-height: 1.6; margin-top: 1mm; }
+  .pillar p { font-family: "Shippori Mincho", serif; font-weight: 700; font-size: 7pt; line-height: 1.5; margin-top: .8mm; }
 
-  .acp { text-align: center; margin-top: 2.5mm; font-family: "Shippori Mincho", serif; color: var(--navy); }
-  .acp .sub { font-size: 10pt; font-weight: 700; letter-spacing: .08em; }
-  .acp .main { font-size: 13pt; font-weight: 800; letter-spacing: .04em; }
-  .acp .main em { font-style: normal; font-size: 17pt; }
+  .acp { text-align: center; margin-top: 1.5mm; font-family: "Shippori Mincho", serif; color: var(--navy); }
+  .acp .sub { font-size: 9pt; font-weight: 700; letter-spacing: .08em; }
+  .acp .main { font-size: 12pt; font-weight: 800; letter-spacing: .04em; }
+  .acp .main em { font-style: normal; font-size: 15pt; }
 
   .mock { flex: 1; min-height: 0; margin-top: 1.5mm; display: flex; justify-content: center; }
   .mock img { height: 100%; max-width: 100%; object-fit: contain; display: block;
@@ -64,31 +80,36 @@
 
   /* ---------- 右カラム ---------- */
   .right { display: flex; flex-direction: column; gap: 3mm; min-height: 0; }
-  .photos { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 21.5mm; gap: 1.2mm; }
+  .photos { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 17mm; gap: 1.2mm; }
   .photos img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; border-radius: 1.2mm; display: block; }
   .desc {
     flex: 1; background: #fff; border-left: 1.2mm solid var(--navy); border-radius: 1.5mm;
-    padding: 3mm 4mm; font-size: 8.4pt; line-height: 1.8; text-align: justify;
+    padding: 2.5mm 3.5mm; font-size: 8pt; line-height: 1.7; text-align: justify;
     box-shadow: 0 .4mm 1.5mm rgba(27,63,122,.12);
     display: flex; flex-direction: column; justify-content: center;
   }
   .desc strong { color: var(--navy); }
-  .desc h3 { font-family: "Shippori Mincho", serif; font-size: 10.5pt; color: var(--navy); margin-bottom: 1.5mm; letter-spacing: .06em; }
+  .desc h3 { font-family: "Shippori Mincho", serif; font-size: 10pt; color: var(--navy); margin-bottom: 1.5mm; letter-spacing: .06em; }
   .desc h3::after { content: ""; display: block; width: 12mm; height: .5mm; background: var(--red); margin-top: .8mm; }
 
   /* ---------- 下帯 ---------- */
   .band {
-    grid-column: 1 / 3; border-radius: 6.5mm; background: #fff;
+    grid-column: 1 / 3; border-radius: 5.5mm; background: #fff;
     border: .8mm solid var(--navy); box-shadow: 0 0 0 1.2mm #dbe7f5;
     display: flex; align-items: center; justify-content: center; gap: 4mm;
     font-family: "Shippori Mincho", serif; font-weight: 800; color: var(--navy);
-    font-size: 11.5pt; letter-spacing: .08em;
+    font-size: 11pt; letter-spacing: .08em;
   }
   .band svg { width: 16mm; height: 7mm; flex: none; }
 </style>
 </head>
 <body>
 <div class="sheet">
+  <header class="event">
+    <div class="tag">社交サロン ザ・クラブジャパン　関西イベント登壇</div>
+    <h2>これからの<em>「生きる準備」</em>を整えるとは？</h2>
+    <p>心置きなく生ききる人生のプロデュースが奏でる、未来に大切な<b>【生きる準備】</b></p>
+  </header>
   <img class="leaves" src="img/leaves.jpg" alt="">
 
   <section class="left">
@@ -102,15 +123,15 @@
 
     <div class="pillars">
       <div class="pillar">
-        <h2><b>命</b>を繋ぐ</h2>
+        <h3><b>命</b>を繋ぐ</h3>
         <p>もしもの時に備え、<br>自分の想いや希望を<br>整理できます</p>
       </div>
       <div class="pillar">
-        <h2><b>誰</b>かに繋ぐ</h2>
+        <h3><b>誰</b>かに繋ぐ</h3>
         <p>家族や大切な人と、<br>対話するきっかけに<br>なります</p>
       </div>
       <div class="pillar">
-        <h2><b>未</b>来に繋ぐ</h2>
+        <h3><b>未</b>来に繋ぐ</h3>
         <p>これからの人生を、<br>自分らしく前向きに<br>考える一歩に</p>
       </div>
     </div>
