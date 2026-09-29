@@ -8,83 +8,96 @@
 <style>
   @page { size: 210mm 148mm; margin: 0; }
   :root {
-    --navy: #1f3f6e;
-    --blue: #3a6ea5;
-    --red: #c8323c;
-    --pink: #f6dde0;
-    --ink: #2b2b2b;
-    --paper: #fbfcfe;
+    --navy: #1b3f7a;
+    --blue: #2f73c4;
+    --red: #d8424f;
+    --green: #7cb342;
+    --ink: #2b2f3a;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: "Noto Sans JP", sans-serif; color: var(--ink);
+  body { font-family: "Noto Sans JP", sans-serif; color: var(--ink); background: #fff;
          -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
   .sheet {
     width: 210mm; height: 148mm; margin: 0 auto; overflow: hidden; position: relative;
     background:
-      radial-gradient(ellipse 120mm 60mm at 20mm 0mm, #e7f0f9 0%, transparent 70%),
-      linear-gradient(180deg, #ffffff 0%, #eef4fa 100%);
-    display: grid; grid-template-columns: 124mm 1fr; gap: 6mm;
-    padding: 7mm 8mm 6mm 9mm;
+      radial-gradient(ellipse 90mm 70mm at 0 100%, #dcebf8 0%, transparent 70%),
+      linear-gradient(180deg, #ffffff 0%, #f0f6fc 100%);
+    display: grid; grid-template-columns: 122mm 1fr; grid-template-rows: minmax(0, 1fr) 13mm;
+    column-gap: 6mm; row-gap: 3mm;
+    padding: 6mm 8mm 5mm 8mm;
   }
+  .leaves { position: absolute; left: 0; top: 0; width: 34mm; mix-blend-mode: multiply; opacity: .9; pointer-events: none;
+            -webkit-mask-image: radial-gradient(ellipse 100% 100% at 0 0, #000 45%, transparent 100%);
+                    mask-image: radial-gradient(ellipse 100% 100% at 0 0, #000 45%, transparent 100%); }
 
   /* ---------- 左カラム ---------- */
-  .left { display: flex; flex-direction: column; min-height: 0; }
-  .title { text-align: center; font-family: "Shippori Mincho", serif; color: var(--navy); }
-  .title .pre { font-size: 12pt; font-weight: 700; letter-spacing: .12em; }
-  .title h1 { font-size: 27pt; font-weight: 800; line-height: 1.25; letter-spacing: .04em; }
+  .left { display: flex; flex-direction: column; min-height: 0; position: relative; }
+  .title { display: flex; align-items: center; justify-content: center; gap: 3mm;
+           font-family: "Shippori Mincho", serif; color: var(--navy); }
+  .title .logo { width: 17mm; mix-blend-mode: multiply; filter: brightness(1.12) contrast(1.25); }
+  .title .pre { font-size: 12pt; font-weight: 700; letter-spacing: .14em; }
+  .title h1 { font-size: 26pt; font-weight: 800; line-height: 1.2; letter-spacing: .04em; }
   .title rt { font-size: 6pt; font-weight: 500; letter-spacing: .3em; }
 
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 2.5mm; }
-  .pillar { text-align: center; }
-  .pillar h2 { font-family: "Shippori Mincho", serif; font-size: 13.5pt; font-weight: 700; color: var(--navy); padding-bottom: 1mm; }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 2mm; }
+  .pillar { text-align: center; --line: var(--red); }
+  .pillar:nth-child(2) { --line: var(--green); }
+  .pillar:nth-child(3) { --line: var(--blue); }
+  .pillar h2 { font-family: "Shippori Mincho", serif; font-size: 13pt; font-weight: 700; color: var(--navy); }
   .pillar h2 b { font-size: 18pt; font-weight: 800; }
-  .pillar:nth-child(1) h2 b { color: var(--red); }
-  .pillar h2::after { content: ""; display: block; height: .6mm; margin: 1mm auto 0; width: 80%;
-                      background: linear-gradient(90deg, transparent, var(--blue), transparent); }
-  .pillar:nth-child(1) h2::after { background: linear-gradient(90deg, transparent, var(--red), transparent); }
-  .pillar p { font-size: 7.3pt; line-height: 1.6; margin-top: 1.2mm; }
+  .pillar h2::after { content: ""; display: block; height: .6mm; margin: .8mm auto 0; width: 85%; border-radius: 1mm;
+                      background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent); }
+  .pillar p { font-family: "Shippori Mincho", serif; font-weight: 700; font-size: 7.5pt; line-height: 1.6; margin-top: 1mm; }
 
-  .acp { text-align: center; margin-top: 3mm; font-family: "Shippori Mincho", serif; color: var(--navy); }
-  .acp .sub { font-size: 10pt; font-weight: 700; letter-spacing: .06em; }
-  .acp .main { font-size: 13.5pt; font-weight: 800; letter-spacing: .02em; }
+  .acp { text-align: center; margin-top: 2.5mm; font-family: "Shippori Mincho", serif; color: var(--navy); }
+  .acp .sub { font-size: 10pt; font-weight: 700; letter-spacing: .08em; }
+  .acp .main { font-size: 13pt; font-weight: 800; letter-spacing: .04em; }
   .acp .main em { font-style: normal; font-size: 17pt; }
 
-  .mock { flex: 1; min-height: 0; margin-top: 2mm; display: flex; align-items: flex-end; justify-content: center; }
-  .mock .frame { position: relative; height: 100%; aspect-ratio: 323 / 182; max-width: 100%; }
-  .mock img { width: 100%; height: 100%; display: block;
-              -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
-                      mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%); }
-  .badge {
-    position: absolute; left: 75%; top: -3%; width: 30mm; height: 30mm; border-radius: 50%; white-space: nowrap;
-    box-shadow: 0 .5mm 1.5mm rgba(176,48,60,.18);
-    background: var(--pink); border: .4mm solid #eab8bf; color: #b0303c;
-    font-family: "Shippori Mincho", serif; font-weight: 700; font-size: 7pt; line-height: 1.5;
-    display: flex; align-items: center; justify-content: center; text-align: center;
-  }
+  .mock { flex: 1; min-height: 0; margin-top: 1.5mm; display: flex; justify-content: center; }
+  .mock img { height: 100%; max-width: 100%; object-fit: contain; display: block;
+              -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%), linear-gradient(0deg, transparent, #000 10%);
+              -webkit-mask-composite: source-in;
+                      mask-image: linear-gradient(90deg, transparent, #000 8%), linear-gradient(0deg, transparent, #000 10%);
+                      mask-composite: intersect; }
 
   /* ---------- 右カラム ---------- */
-  .right { display: flex; flex-direction: column; gap: 3.5mm; min-height: 0; }
-  .photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 40mm 30mm; gap: 1.5mm; }
-  .photos img { width: 100%; height: 100%; object-fit: cover; border-radius: 1.5mm; display: block; }
-  .photos .wide { grid-column: 1 / 3; object-position: center 35%; }
+  .right { display: flex; flex-direction: column; gap: 3mm; min-height: 0; }
+  .photos { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 21.5mm; gap: 1.2mm; }
+  .photos img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; border-radius: 1.2mm; display: block; }
   .desc {
     flex: 1; background: #fff; border-left: 1.2mm solid var(--navy); border-radius: 1.5mm;
-    padding: 4mm 4.5mm; font-size: 9pt; line-height: 1.9; text-align: justify;
-    box-shadow: 0 .4mm 1.5mm rgba(31,63,110,.12);
+    padding: 3mm 4mm; font-size: 8.4pt; line-height: 1.8; text-align: justify;
+    box-shadow: 0 .4mm 1.5mm rgba(27,63,122,.12);
     display: flex; flex-direction: column; justify-content: center;
   }
   .desc strong { color: var(--navy); }
-  .desc h3 { font-family: "Shippori Mincho", serif; font-size: 11pt; color: var(--navy); margin-bottom: 2mm; letter-spacing: .06em; }
-  .desc h3::after { content: ""; display: block; width: 12mm; height: .5mm; background: var(--red); margin-top: 1mm; }
+  .desc h3 { font-family: "Shippori Mincho", serif; font-size: 10.5pt; color: var(--navy); margin-bottom: 1.5mm; letter-spacing: .06em; }
+  .desc h3::after { content: ""; display: block; width: 12mm; height: .5mm; background: var(--red); margin-top: .8mm; }
+
+  /* ---------- 下帯 ---------- */
+  .band {
+    grid-column: 1 / 3; border-radius: 6.5mm; background: #fff;
+    border: .8mm solid var(--navy); box-shadow: 0 0 0 1.2mm #dbe7f5;
+    display: flex; align-items: center; justify-content: center; gap: 4mm;
+    font-family: "Shippori Mincho", serif; font-weight: 800; color: var(--navy);
+    font-size: 11.5pt; letter-spacing: .08em;
+  }
+  .band svg { width: 16mm; height: 7mm; flex: none; }
 </style>
 </head>
 <body>
 <div class="sheet">
+  <img class="leaves" src="img/leaves.jpg" alt="">
+
   <section class="left">
     <div class="title">
-      <div class="pre">生きるための</div>
-      <h1>『<ruby>繋<rt>つな</rt></ruby>ぐノート』</h1>
+      <img class="logo" src="img/logo.jpg" alt="">
+      <div>
+        <div class="pre">生きるための</div>
+        <h1>『<ruby>繋<rt>つな</rt></ruby>ぐノート』</h1>
+      </div>
     </div>
 
     <div class="pillars">
@@ -93,11 +106,11 @@
         <p>もしもの時に備え、<br>自分の想いや希望を<br>整理できます</p>
       </div>
       <div class="pillar">
-        <h2><b>誰か</b>に繋ぐ</h2>
+        <h2><b>誰</b>かに繋ぐ</h2>
         <p>家族や大切な人と、<br>対話するきっかけに<br>なります</p>
       </div>
       <div class="pillar">
-        <h2><b>未来</b>に繋ぐ</h2>
+        <h2><b>未</b>来に繋ぐ</h2>
         <p>これからの人生を、<br>自分らしく前向きに<br>考える一歩に</p>
       </div>
     </div>
@@ -108,24 +121,31 @@
     </div>
 
     <div class="mock">
-      <div class="frame">
-        <img src="img/notebook.png" alt="繋ぐノートの表紙と中面">
-        <div class="badge">自分らしく生きる<br>未来のために。<br>「話す」「書く」<br>「伝える」<br>きっかけに</div>
-      </div>
+      <img src="img/notebook.jpg" alt="繋ぐノートの表紙と中面">
     </div>
   </section>
 
   <section class="right">
     <div class="photos">
-      <img class="wide" src="img/p1.png" alt="">
-      <img src="img/p2.png" alt="">
-      <img src="img/p3.png" alt="">
+      <img src="img/photo1.jpg" alt="">
+      <img src="img/photo2.jpg" alt="">
+      <img src="img/photo3.jpg" alt="">
+      <img src="img/photo4.jpg" alt="">
+      <img src="img/photo5.jpg" alt="">
+      <img src="img/photo6.jpg" alt="">
     </div>
     <div class="desc">
       <h3>繋ぐノートとは</h3>
-      <p><strong>大切にしていること、家族への想い、窮地に医療従事者への連携や介護への希望</strong>、そして希望する終末期医療の具体化や、旅立ちまで、自分の人生を一つにつなげて考え、<strong>家族と話し合うためのツール</strong>です。</p>
+      <p><strong>大切にしていること、家族への想い、緊急時に医療従事者への連携や介護への希望</strong>、そして希望する終末期医療の具体化や、旅立ちまで、自分の人生を一つにつなげて考え、<strong>家族と話し合うためのツール</strong>です。</p>
     </div>
   </section>
+
+  <div class="band">
+    <span>繋ぐノートは、あなたの想いを、あなたの未来を、大切な人に“繋ぐ”ノートです。</span>
+    <svg viewBox="0 0 64 28" fill="none" stroke="#d8424f" stroke-width="1.4" stroke-linecap="round">
+      <path d="M2 22 C 14 26, 22 18, 30 14 C 26 8, 32 3, 36 8 C 40 3, 46 8, 40 14 L 36 19 L 32 14 C 40 20, 52 24, 62 20"/>
+    </svg>
+  </div>
 </div>
 </body>
 </html>
