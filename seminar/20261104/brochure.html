@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>1日完結講座のご案内</title>
+<link href="fonts/local.css" rel="stylesheet">
+<style>
+:root{--navy:#1c2a44;--navy2:#2c3e5f;--gold:#b0894f;--gold-l:#e9dcc4;--cream:#faf7f1;--ink:#2a2a2a;--mute:#6b6b6b;--line:#ddd3c2}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans JP","IPAGothic",sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.75;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:var(--cream);padding:18mm 17mm 16mm}
+.page:last-child{page-break-after:auto}
+.serif{font-family:"Noto Serif JP",serif}
+.foot{position:absolute;left:17mm;right:17mm;bottom:9mm;display:flex;justify-content:space-between;font-size:8pt;color:var(--mute);border-top:1px solid var(--line);padding-top:2.5mm}
+h2{font-family:"Noto Serif JP",serif;font-size:19pt;color:var(--navy);font-weight:700;line-height:1.4;margin-bottom:2mm}
+.eyebrow{font-size:8.5pt;letter-spacing:.25em;color:var(--gold);font-weight:700;margin-bottom:1mm}
+.rule{width:14mm;height:2px;background:var(--gold);margin:3mm 0 6mm}
+.lead{font-size:11pt;color:#444;margin-bottom:6mm}
+
+/* cover */
+.cover{background:var(--navy);color:#fff;padding:0}
+.cover .inner{position:absolute;inset:0;padding:22mm 20mm}
+.cover .frame{position:absolute;inset:9mm;border:1px solid rgba(176,137,79,.55)}
+.cover .tag{display:inline-block;border:1px solid var(--gold);color:var(--gold-l);font-size:9.5pt;letter-spacing:.2em;padding:1.5mm 5mm;margin-bottom:14mm}
+.cover .catch{font-family:"Noto Serif JP",serif;font-size:14pt;color:var(--gold-l);letter-spacing:.08em;margin-bottom:6mm}
+.cover h1{font-family:"Noto Serif JP",serif;font-weight:900;font-size:38pt;line-height:1.3;letter-spacing:.02em}
+.cover h1 .gold{color:#d6b77f}
+.cover .sub{font-size:13pt;margin-top:7mm;color:#e7e3da;line-height:1.8}
+.cover .facts{position:absolute;left:20mm;right:20mm;bottom:26mm;display:grid;grid-template-columns:1.25fr 1fr 1fr;border-top:1px solid rgba(176,137,79,.6);border-bottom:1px solid rgba(176,137,79,.6)}
+.cover .facts div{padding:6mm 4mm 6mm 0}
+.cover .facts div+div{padding-left:6mm;border-left:1px solid rgba(176,137,79,.35)}
+.cover .facts small{display:block;font-size:8.5pt;letter-spacing:.2em;color:var(--gold);margin-bottom:1.5mm}
+.cover .facts b{font-family:"Noto Serif JP",serif;font-size:17pt;font-weight:700;line-height:1.35;display:block}
+.cover .facts span{font-size:9.5pt;color:#cfd4dd}
+.cover .org{position:absolute;left:20mm;bottom:15mm;font-size:9pt;letter-spacing:.15em;color:#aeb6c4}
+.cover .motif{position:absolute;right:-28mm;top:62mm;width:120mm;height:120mm;border-radius:50%;border:1px solid rgba(176,137,79,.25)}
+.cover .motif.m2{right:-8mm;top:82mm;width:80mm;height:80mm}
+
+/* page 2 */
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-bottom:6mm}
+.card{background:#fff;border:1px solid var(--line);border-radius:2mm;padding:5mm 6mm}
+.card h3{font-family:"Noto Serif JP",serif;font-size:13pt;margin-bottom:2.5mm;color:var(--navy)}
+.card.dim h3{color:var(--mute)}
+.card ul{list-style:none}
+.card li{padding-left:4.5mm;position:relative;font-size:9.8pt;margin-bottom:1mm}
+.card li:before{content:"";position:absolute;left:0;top:.75em;width:2mm;height:2mm;border-radius:50%;background:var(--line)}
+.card.hl{border-color:var(--gold);box-shadow:inset 0 3px 0 var(--gold)}
+.card.hl li:before{background:var(--gold)}
+.banner{background:var(--navy);color:#fff;text-align:center;padding:4.5mm;border-radius:2mm;font-family:"Noto Serif JP",serif;font-size:12.5pt;margin-bottom:8mm}
+.banner b{color:#d6b77f}
+.target{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5mm 5mm;margin-bottom:8mm}
+.target div{background:#fff;border-left:3px solid var(--gold);padding:2.5mm 4mm;font-size:10pt}
+.gains{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.gain{background:#fff;border:1px solid var(--line);border-radius:2mm;padding:5mm}
+.gain .n{font-family:"Noto Serif JP",serif;font-size:20pt;color:var(--gold);line-height:1;margin-bottom:2mm}
+.gain h4{font-size:11pt;color:var(--navy);margin-bottom:1.5mm;line-height:1.5}
+.gain p{font-size:9pt;color:#555;line-height:1.65}
+h3.sec{font-family:"Noto Serif JP",serif;font-size:13pt;color:var(--navy);margin-bottom:3mm;display:flex;align-items:center;gap:3mm}
+h3.sec:after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* page 3 timetable */
+.tt{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line)}
+.tt td{vertical-align:top;padding:3mm 4mm;border-bottom:1px solid var(--line)}
+.tt tr:last-child td{border-bottom:none}
+.tt .time{width:27mm;font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:10.5pt;white-space:nowrap;background:#f4efe6}
+.tt .part{font-size:8pt;color:var(--gold);letter-spacing:.15em;font-weight:700}
+.tt h4{font-size:11pt;color:var(--navy);line-height:1.5;margin-bottom:.8mm}
+.tt p{font-size:9pt;color:#555;line-height:1.6}
+.tt tr.brk td{background:#f7f4ee;color:var(--mute);font-size:9pt;padding:1.8mm 4mm}
+.tt tr.brk .time{background:#efe9dd;font-weight:500;font-size:9pt}
+.steps{display:flex;gap:1.5mm;margin-top:1.5mm;flex-wrap:wrap}
+.steps span{font-size:8pt;background:var(--gold-l);color:var(--navy);padding:.3mm 2.2mm;border-radius:1mm}
+.note{font-size:8.5pt;color:var(--mute);margin-top:3mm}
+
+/* page 4 */
+.outline{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);margin-bottom:7mm}
+.outline th{width:32mm;text-align:left;background:var(--navy);color:#fff;font-weight:500;padding:3.8mm 5mm;font-size:10pt;border-bottom:1px solid #3a4b6a;vertical-align:top}
+.outline td{padding:3.8mm 5mm;border-bottom:1px solid var(--line);font-size:10.5pt}
+.outline tr:last-child th,.outline tr:last-child td{border-bottom:none}
+.outline .big{font-family:"Noto Serif JP",serif;font-size:14pt;font-weight:700;color:var(--navy)}
+.outline small{color:var(--mute);font-size:8.8pt}
+.after{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-bottom:7mm}
+.after div{background:#fff;border-top:3px solid var(--gold);padding:4mm;font-size:9.3pt;line-height:1.65}
+.after b{display:block;color:var(--navy);font-size:10.5pt;margin-bottom:1mm}
+.apply{background:var(--navy);color:#fff;border-radius:2mm;padding:7mm 8mm;display:grid;grid-template-columns:1fr 1fr;gap:6mm;align-items:center}
+.apply h3{font-family:"Noto Serif JP",serif;font-size:15pt;color:#fff;margin-bottom:2mm}
+.apply p{font-size:9.5pt;color:#d5dae3}
+.apply .box{border:1px dashed rgba(214,183,127,.7);border-radius:1.5mm;padding:4mm 5mm;font-size:9.5pt;color:#e7e3da;line-height:2}
+.apply .box b{color:#d6b77f;font-weight:500;display:inline-block;width:22mm}
+.closing{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:13pt;margin:8mm 0 0;line-height:1.9}
+.closing b{color:var(--gold)}
+.lecturer{display:grid;grid-template-columns:42mm 1fr;gap:7mm;background:#fff;border:1px solid var(--line);border-radius:2mm;padding:5mm;margin-bottom:7mm;align-items:center}
+.lecturer .photo{width:42mm;height:42mm;border-radius:50%;overflow:hidden;position:relative;background:#ece5d8;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.lecturer .photo span{font-size:8pt;color:var(--mute)}
+.lecturer .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.lecturer .role{font-size:8pt;letter-spacing:.2em;color:var(--gold);font-weight:700}
+.lecturer .name{font-family:"Noto Serif JP",serif;font-size:18pt;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:1.5mm}
+.lecturer .name small{font-family:"Noto Sans JP",sans-serif;font-size:8.5pt;color:var(--mute);font-weight:400;margin-left:3mm;letter-spacing:.08em}
+.lecturer ul{list-style:none;font-size:9.3pt;line-height:1.7;margin-bottom:2mm}
+.lecturer li:before{content:"― ";color:var(--gold)}
+.lecturer .msg{font-size:9.3pt;color:#555;line-height:1.7}
+
+/* fit tweaks */
+.page{padding-top:15mm}
+.rule{margin:2.5mm 0 4.5mm}
+.lead{margin-bottom:5mm;font-size:10.5pt}
+.contrast{margin-bottom:4.5mm}
+.card{padding:4mm 5.5mm}
+.banner{margin-bottom:6mm;padding:3.5mm}
+.target{margin-bottom:6mm}
+.gain{padding:4mm}
+.outline th,.outline td{padding:2.6mm 5mm}
+.outline{margin-bottom:5.5mm}
+.outline .big{font-size:13pt}
+.lecturer{grid-template-columns:36mm 1fr;padding:4.5mm 5mm;margin-bottom:5.5mm}
+.lecturer .photo{width:36mm;height:36mm}
+.apply{padding:5.5mm 7mm}
+.closing{margin-top:5mm;font-size:12pt;line-height:1.7}
+.cover .motto{margin-top:22mm;font-family:"Noto Serif JP",serif;font-size:13pt;line-height:2;color:#cfd4dd;border-left:2px solid var(--gold);padding-left:5mm}
+.cover .motto b{color:#d6b77f;font-weight:700}
+</style>
+</head>
+<body>
+
+<!-- ===== 1. COVER ===== -->
+<section class="page cover">
+  <div class="frame"></div>
+  <div class="motif"></div><div class="motif m2"></div>
+  <div class="inner">
+    <div class="tag">1日完結講座　ご案内</div>
+    <p class="catch">商品を売る人ではなく、人生を預かる人へ</p>
+    <h1>1日で、<br><span class="gold">相続コンサルタント</span><br>デビュー。</h1>
+    <p class="sub">「聞ける人」になる ── 受任につながる考え方と<br>個別相談の型を、1日で身につける最短コース</p>
+    <p class="motto">仕事をするなら、本気で。<br><b>聞ける人が、受任される。</b></p>
+  </div>
+  <div class="facts">
+    <div><small>DATE</small><b>2026年11月4日（水）</b><span>10:00〜17:00（1日完結）</span></div>
+    <div><small>STYLE</small><b>オンライン</b><span>全国どこからでも参加可能</span></div>
+    <div><small>FEE</small><b>150,000円</b><span>（税込）</span></div>
+  </div>
+  <div class="org">主催　繋ぐコンサルタントオフィス</div>
+</section>
+
+<!-- ===== 2. CONCEPT ===== -->
+<section class="page">
+  <p class="eyebrow">CONCEPT</p>
+  <h2>知識だけでは、<br>お客様の人生を創れない。</h2>
+  <div class="rule"></div>
+  <p class="lead">クライアントが未来を描けるのは、あなたを信頼した時です。そして信頼は、日々の在り方から生まれます。本講座は相続税の計算や法律の暗記ではなく、<b>「あなたに任せたい」と言われるプロとしての思考・姿勢・行動</b>を1日で身につけ、相続コンサルタントとして現場に立つための講座です。</p>
+
+  <div class="contrast">
+    <div class="card dim">
+      <h3>説明する人</h3>
+      <ul>
+        <li>知識を「教える」ことに重きを置く</li>
+        <li>制度や税率を詳しく説明する</li>
+        <li>お客様の反応より、自分の話を優先する</li>
+        <li>「提案」がゴールになっている</li>
+      </ul>
+    </div>
+    <div class="card hl">
+      <h3>聞ける人</h3>
+      <ul>
+        <li>お客様の「想い」を引き出すことに集中する</li>
+        <li>深く聴き、家族の物語を丁寧に受け取る</li>
+        <li>潜在的な願いを一緒に明らかにする</li>
+        <li>「人物理解」がゴールになっている</li>
+      </ul>
+    </div>
+  </div>
+  <div class="banner"><b>聞ける人が、受任される。</b>　相談のゴールは「提案」ではなく「人物理解」です。</div>
+
+  <h3 class="sec">こんな方におすすめです</h3>
+  <div class="target">
+    <div>相続コンサルタントとして独立・開業したい方</div>
+    <div>士業・保険・不動産・金融の知識を相続相談に活かしたい方</div>
+    <div>知識はあるのに、なかなか受任につながらない方</div>
+    <div>個別相談で何をどう聞けばよいか、型を知りたい方</div>
+  </div>
+
+  <h3 class="sec">1日で手に入るもの</h3>
+  <div class="gains">
+    <div class="gain"><div class="n">01</div><h4>プロとしての覚悟と<br>自分の行動指針</h4><p>目指すコンサルタント像・3年後のビジョン・今日からの行動を、自分の言葉で言語化します。</p></div>
+    <div class="gain"><div class="n">02</div><h4>受任につながる<br>個別相談の型</h4><p>場のデザイン、5つの時間構造、深く聴く質問技術を、ロールプレイで体得します。</p></div>
+    <div class="gain"><div class="n">03</div><h4>相続全体を動かす<br>「指揮官」の視点</h4><p>問題抽出シートとプレゼンテーションで、お客様の人生を見える化し、専門家をつなぎます。</p></div>
+  </div>
+  <div class="foot"><span>1日完結講座｜相続コンサルタント デビュー最短コース</span><span>2</span></div>
+</section>
+
+<!-- ===== 3. CURRICULUM ===== -->
+<section class="page">
+  <p class="eyebrow">CURRICULUM</p>
+  <h2>当日のプログラム</h2>
+  <div class="rule"></div>
+  <table class="tt">
+    <tr><td class="time">10:00–10:30</td><td><div class="part">第1章</div><h4>プロとしての覚悟 ── 心置きなく生ききる人生のプロデュース</h4><p>相続は人生を預かる仕事。知識の習得ではなく、「受任できる人材」としての思考・姿勢・行動とは何かを確認します。</p></td></tr>
+    <tr><td class="time">10:30–12:00</td><td><div class="part">第2章</div><h4>ヒアリングの本質 ── 情報収集ではなく「人生の棚卸」</h4><p>相続コンサルティングの骨格となるステップ、個別相談のセッティング（あなたは誰か／何ができるか／今から何を始めるか）、ヒアリングの心得。</p>
+      <div class="steps"><span>登場人物を提示</span><span>人物像を聴取</span><span>関係性の解明</span><span>課題を抽出</span><span>解決スキーム構築</span></div></td></tr>
+    <tr class="brk"><td class="time">12:00–13:00</td><td>昼休憩</td></tr>
+    <tr><td class="time">13:00–14:15</td><td><div class="part">場の設計・質問技術</div><h4>個別相談という「場」をデザインする</h4><p>雑談でも面接でもない相談の場のつくり方。「場をひらく→聴く→深める→確認する→次回の約束」の時間構造と、よくある4つの場面で使える質問例。</p></td></tr>
+    <tr><td class="time">14:15–15:15</td><td><div class="part">ケーススタディ</div><h4>ロールプレイ「この夫婦と向き合ってください」</h4><p>資料は使わず「聴くだけ」に集中。正解を急がず人物を理解し、最後に次回の約束を取り付けるまでを実践します。</p></td></tr>
+    <tr class="brk"><td class="time">15:15–15:30</td><td>休憩</td></tr>
+    <tr><td class="time">15:30–16:15</td><td><div class="part">指揮官としての仕事</div><h4>ゴールを描き、専門家を配置する</h4><p>ゴールを描く→問題を整理→優先順位を決定→専門家を配置。指揮官に必要な5つの力、問題抽出シートの活用、お客様の人生を見える化するプレゼンテーション。</p></td></tr>
+    <tr><td class="time">16:15–16:50</td><td><div class="part">ワーク</div><h4>私の行動指針をつくる</h4><p>①どんなコンサルタントになるのか　②3年後ビジョン　③そのために今年何をするか　④今日から始めること（知・心・動）</p></td></tr>
+    <tr><td class="time">16:50–17:00</td><td><div class="part">まとめ</div><h4>「私の相続コンサルタント宣言」── 明日からの一歩へ</h4><p>本日の学びを振り返り、デビューに向けた最初の行動を決めて修了です。</p></td></tr>
+  </table>
+  <p class="note">※ 時間配分は目安です。当日の進行により前後する場合があります。</p>
+  <div class="foot"><span>1日完結講座｜相続コンサルタント デビュー最短コース</span><span>3</span></div>
+</section>
+
+<!-- ===== 4. OUTLINE ===== -->
+<section class="page">
+  <p class="eyebrow">OUTLINE</p>
+  <h2>開催概要</h2>
+  <div class="rule"></div>
+  <table class="outline">
+    <tr><th>講座名</th><td><span class="big">相続コンサルタント デビュー最短コース</span><br><small>1日完結講座 ──「聞ける人」になる</small></td></tr>
+    <tr><th>日時</th><td><span class="big">2026年11月4日（水）</span><br>10:00〜17:00（昼休憩・小休憩あり）</td></tr>
+    <tr><th>開催形式</th><td>オンライン（ビデオ会議システムを使用）<br><small>カメラ・マイクが使える環境でご参加ください。ロールプレイ・ワークを行います。</small></td></tr>
+    <tr><th>参加費</th><td><span class="big">150,000円</span>（税込）</td></tr>
+    <tr><th>対象</th><td>相続コンサルタントとして活動を始めたい方、相続相談を受任につなげたい方</td></tr>
+    <tr><th>持ち物</th><td>筆記用具・メモ（ワークシートは事前にお送りします）</td></tr>
+    <tr><th>主催</th><td>繋ぐコンサルタントオフィス</td></tr>
+  </table>
+
+  <h3 class="sec">講師紹介</h3>
+  <div class="lecturer">
+    <div class="photo"><img src="matsumoto.jpg" alt="講師 松本" onerror="this.remove()"><span>講師写真</span></div>
+    <div>
+      <p class="role">講師</p>
+      <p class="name">松本 昂大<small>Kouta Matsumoto</small></p>
+      <ul>
+        <li>株式会社繋ぐコンサルタントオフィス　専務</li>
+        <li>繋ぐ相続サロン®︎ 本部</li>
+        <li>一般社団法人繋ぐライフファミリーサポート</li>
+      </ul>
+      <p class="msg">「相続ビジネスでサポート社会を創る」をテーマに、全国で相続コンサルタントの育成に取り組む。</p>
+    </div>
+  </div>
+
+  <div class="apply">
+    <div>
+      <h3>お申込み・お問い合わせ</h3>
+      <p>1日で、プロとしての第一歩を。<br>ご質問だけでもお気軽にお問い合わせください。</p>
+    </div>
+    <div class="box">
+      <b>お申込み</b>〔 申込フォームURL 〕<br>
+      <b>メール</b>〔 メールアドレス 〕<br>
+      <b>電話</b>〔 電話番号 〕<br>
+      <b>締切</b>〔 申込締切日 〕
+    </div>
+  </div>
+
+  <div class="foot"><span>©繋ぐコンサルタントオフィス</span><span>4</span></div>
+</section>
+</body>
+</html>
